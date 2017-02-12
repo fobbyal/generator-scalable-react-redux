@@ -1,9 +1,16 @@
 {
   "env": {
     "es6":true,
+    "browser": true,
     "node": true
   },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "import"
+  ],
   "ecmaFeatures": {
+    "jsx": true,
     "experimentalObjectRestSpread": true,
     'arrowFunctions': true,
     'blockBindings': true,
@@ -23,8 +30,20 @@
     'templateStrings': true,
   },
   "rules": {
+    "import/no-unresolved": [2, {commonjs: true, amd: true}],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
     "quotes": [2, "single"],
     "strict": [2, "never"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/prop-types":[0,{}],
+    /* "react/jsx-no-bind":[1,{ */
+    /*   "allowArrowFunctions": true */
+    /*   }], */
     "camelcase": [2, {"properties": "always"}],
     /* this is spcific rule to use ramda through out the module */
     "no-console" : [2,{"allow": ["warn","error"]}],
@@ -74,4 +93,9 @@
     "object-curly-spacing": [2, "always"],
     "array-bracket-spacing": [2, "never" ]
   },
+  "settings": {
+    "import/resolver": {
+			"babel-module": {}
+    }
+  }
 }

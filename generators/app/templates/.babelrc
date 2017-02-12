@@ -1,0 +1,28 @@
+{
+  "presets": [
+    ["es2015",{"modules":false }],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-object-rest-spread",
+    "transform-async-to-generator",
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+				"api": "./src/api",
+				"calc-result": "./src/calc-result",
+				"calc-diff": "./src/calc-diff",
+				"input-diff": "./src/input-diff",
+        "core": "./src/core",
+				"mock-json": "./mock-api/json",
+      }
+    }]
+  ],
+	"env": {
+		"test": {
+			"plugins": ["transform-es2015-modules-commonjs"]
+		}
+  }
+}
