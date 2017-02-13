@@ -1,8 +1,11 @@
 import localReducer from './reducer'
 import { NAME } from './constants'
+import Container,{ navs } from './container/Container'
+import { action } from './actions.js'
 
-export const reducers = {
+const reducers = {
   [NAME]: localReducer
 }
 
-export default { NAME , reducers }
+export { reducers, NAME, navs , Container, action }
+export default { reducers, NAME, navs , Container, action }

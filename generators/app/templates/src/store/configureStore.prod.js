@@ -1,8 +1,6 @@
 import { createStore, combineReducers, applyMiddleware,compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import reducers from '../rootReducer'
-// import { routerReducer } from 'react-router-redux';
-// import { browserHistory } from 'react-router';
 
 const enhancer = applyMiddleware(thunkMiddleware)
 //const finalReducer = combineReducers({ ...reducers, routing: routerReducer });

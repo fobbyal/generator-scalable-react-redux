@@ -1,5 +1,6 @@
 {
   "id":"mock-server",
   "type":"message",
-  "status":"alive!!!"
+  "msg":"mock-server is alive!!!",
+  "date":"2017-01-01"
 }

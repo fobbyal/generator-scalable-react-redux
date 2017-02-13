@@ -3,6 +3,7 @@ const yargs = require('yargs')
 const express = require('express')
 const bodyParser = require('body-parser')
 const mockJson = require('./json/mock.json')
+const uuid = require('uuid/v4')
 
 // import R from 'ramda';
 // import moment from 'moment';
@@ -32,6 +33,7 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended:true }))
 
 router.get('/test', (req, res) => {
+  const data = Object.assign( mockJson,{ id:uuid(), date:new Date() })
   res.send(mockJson)
 })
 

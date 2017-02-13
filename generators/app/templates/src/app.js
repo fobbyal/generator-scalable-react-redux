@@ -17,11 +17,7 @@ require('!!style-loader!css-loader!react-datepicker/dist/react-datepicker.css')
 /**need code here to get initial state need to how how get the previous state from java**/
 const rootEl = document.getElementById('root')
 
-const store = configureStore({
-  'core':{ 
-    apiUrl:'http://localhost:9898'
-  }
-})
+const store = configureStore()
 
 
 /** this is here because auto reload won't wor if require action */

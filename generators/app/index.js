@@ -20,15 +20,15 @@ module.exports = Generator.extend({
     },
     {
       type: 'input',
-      name: 'author',
-      message: 'Please enter authors',
-      default: username.sync(),
+      name: 'desc',
+      message: 'Please enter description for the app. This will be used as the Title for the webpage',
+      default: this.appname,
     },
     {
       type: 'input',
-      name: 'description',
-      message: 'Please enter description for the app',
-      default: undefined,
+      name: 'author',
+      message: 'Please enter authors',
+      default: username.sync(),
     }
 
     ]
@@ -36,18 +36,58 @@ module.exports = Generator.extend({
     return this.prompt(prompts).then((props) => {
       // To access props later use this.props.someAnswer;
       this.props = props
-      console.log(props)
+      this.log('recieved options:',props)
     })
   },
 
   writing() {
-    // this.fs.copy(
-    //   this.templatePath('dummyfile.txt'),
-    //   this.destinationPath('dummyfile.txt')
-    // )
+    this.log('copying template files')
+    this.fs.copy(
+      this.templatePath('!(node_modules)'),
+      this.destinationPath()
+    )
+    this.fs.copy(
+      this.templatePath('.*'),
+      this.destinationPath()
+    )
+    this.fs.copy(
+      this.templatePath('mock-api/**/*.*'),
+      this.destinationPath('mock-api')
+    )
+    this.fs.copy(
+      this.templatePath('src/**/*.*'),
+      this.destinationPath('src')
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('src/RootNav.js'),
+      this.destinationPath('src/RootNav.js'),
+      { name:this.props.name }
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('var-files/package.json'),
+      this.destinationPath('package.json'),
+      { name:this.props.name,desc: this.props.desc,author: this.props.author }
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('var-files/index.html'),
+      this.destinationPath('src/index.html'),
+      { desc:this.props.desc }
+    )
   },
 
   install() {
-    //this.installDependencies()
+    this.installDependencies({
+      bower: false,
+      npm: false,
+      yarn: true,
+      callback: _ => this.log(
+        `Everything is ready!
+        Please use: ${chalk.green('yarn start')} to start the app
+        navigate to ${chalk.green('http://localhost:3000')}`
+      )
+    })
   }
 })

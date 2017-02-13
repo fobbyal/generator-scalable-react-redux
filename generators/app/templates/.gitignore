@@ -1,0 +1,8 @@
+node_modules
+dist
+*.swp
+tmp-uploads
+*.iml
+npm-debug.log
+coverage
+mock-api/json/*full.json

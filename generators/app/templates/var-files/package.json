@@ -1,7 +1,7 @@
 {
-  "name": "AppName",
+  "name": "<%= name %>",
   "version": "0.0.1",
-  "description": "Description",
+  "description": "<%= desc %>",
   "main": "src/app.js",
   "scripts": {
     "prebuild:prod": "npm run clean-dist",
@@ -21,7 +21,7 @@
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage"
   },
-  "author": "Alex Liang",
+  "author": "<%= author %>",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.5.0",

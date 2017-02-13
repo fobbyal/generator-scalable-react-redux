@@ -1,18 +1,22 @@
-import * as pspk from 'api/pspk'
+import * as api from 'api/api'
 
 import {
   STORE_API_URL,
+  STORE_DUMMY_DATA,
 } from './action-names'
 
-export const action = (type,payload) => ({
-  type,
-  payload
-})
+import {
+  getApiTargetInfo
+} from './selectors'
 
-export const retrieveTest = () => (dispatch,getState) => {
-  const targetInfo = getPspkTargetInfo(getState())
-  return pspk.getTest(targetInfo)()
+export const action = (type,payload) => ({ type, payload })
+
+export const retrieveDummyData = () => (dispatch,getState) => {
+  const targetInfo = getApiTargetInfo(getState())
+  return api.getTest(targetInfo)()
   .then(data => data.json())
-  .then(map => dispatch(action(STORE_UNIT_MAP,map)))
-  return new Promise(resolve => resolve(map))
+  .then(map => dispatch(action(STORE_DUMMY_DATA,map)))
+  .catch(e => console.log(e,e.stack))
 }
+
+export const storeApiUrl = url => action(STORE_API_URL,url)
