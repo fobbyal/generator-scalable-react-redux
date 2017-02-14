@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["es2015",{"modules":false }],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-object-rest-spread",
+    "transform-async-to-generator",
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+				"api": "./src/api",
+        "core": "./src/core",
+				"mock-json": "./mock-api/json",
+      }
+    }]
+  ],
+	"env": {
+		"test": {
+			"plugins": ["transform-es2015-modules-commonjs"]
+		}
+  }
+}

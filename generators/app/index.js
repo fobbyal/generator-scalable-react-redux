@@ -2,11 +2,18 @@ const Generator = require('yeoman-generator')
 const chalk = require('chalk')
 const yosay = require('yosay')
 const username = require('username')
+const  { fromNullable, Just, Nothing } = require('data.maybe')
+const fs = require('fs')
 
 module.exports = Generator.extend({
 
+  initializing() {
+    const fileList =fs.readdirSync(this.destinationPath())
+    if(fileList.length > 0) 
+      this.env.error('this generator can only run in a empty directory')
+  },
   prompting() {
-    // Have Yeoman greet the user.
+    // Have Yeoman greet the user.k
     this.log(yosay(
       `Welcome to the ${ chalk.red('react-redux-spa')  } generator!`
     ))
@@ -37,6 +44,7 @@ module.exports = Generator.extend({
       // To access props later use this.props.someAnswer;
       this.props = props
       this.log('recieved options:',props)
+      this.props.name = this.props.name.replace(/\s+/g,'-')
     })
   },
 
@@ -77,17 +85,27 @@ module.exports = Generator.extend({
       { desc:this.props.desc }
     )
   },
-
   install() {
     this.installDependencies({
       bower: false,
       npm: false,
       yarn: true,
-      callback: _ => this.log(
-        `Everything is ready!
-        Please use: ${chalk.green('yarn start')} to start the app
-        navigate to ${chalk.green('http://localhost:3000')}`
-      )
+      callback: error => {
+        if (error) {
+          this.env.error('… make sure yarn is installed properly '+
+            `Run ${chalk.yellow('npm install')} instead if you must.`
+          )
+        } 
+      }
     })
+  },
+  end () {
+    this.config.set('createdBy',this.rootGeneratorName())
+    this.config.save()
+    this.log(yosay(`
+      That’s it. Feel free to fire up the server with ${chalk.green('yarn start')}
+      Navigate to ${chalk.green('http://localhost:3000')}
+      To look at the app`))
   }
+
 })
