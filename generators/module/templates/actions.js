@@ -1,4 +1,4 @@
-import {action} from 'core'
+import { action } from 'core'
 
 /*
 import {
