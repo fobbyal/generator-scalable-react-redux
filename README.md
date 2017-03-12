@@ -32,7 +32,7 @@ First, install [Yeoman](http://yeoman.io) and generator-react-redux-spa using [n
 
 ```bash
 npm install -g yo
-npm install -g generator-react-redux-spa@alpha
+npm install -g generator-scalable-react-redux@alpha
 ```
 
 Then generate your new project:
