@@ -1,5 +1,5 @@
 # generator-react-redux-spa [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Opiniated React Redux spa scalfolding
+> Opinionated React Redux spa scalfolding
 
 #Poject is still in Alpha
 
