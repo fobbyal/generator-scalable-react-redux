@@ -3,7 +3,9 @@ import R from 'ramda'
 //const baseUrl='http://localhost:9898'
 
 const url = ({ baseUrl }, target) => {
+  /*eslint-disable*/
   console.log('base url is',baseUrl)
+  /*eslint-enable*/
   return   `${baseUrl}/api/${target}`
 }
 

@@ -13,7 +13,7 @@
       "alias": {
 				"api": "./src/api",
         "core": "./src/core",
-				"mock-json": "./mock-api/json",
+				"mock-json": "./mock-api/json"
       }
     }]
   ],

@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import * as selectors from './selectors'
 import localReducer from './reducer'
-import { action  }from './actions'
+import { action  } from 'core'
 import { combineReducers } from 'redux'
 import { NAME } from './constants'
 

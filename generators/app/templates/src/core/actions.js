@@ -16,7 +16,10 @@ export const retrieveDummyData = () => (dispatch,getState) => {
   return api.getTest(targetInfo)()
   .then(data => data.json())
   .then(map => dispatch(action(STORE_DUMMY_DATA,map)))
+  /*eslint-disable */
+  //neede better error handling
   .catch(e => console.log(e,e.stack))
+  /*eslint-enable */
 }
 
 export const storeApiUrl = url => action(STORE_API_URL,url)

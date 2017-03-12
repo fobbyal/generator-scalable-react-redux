@@ -7,6 +7,8 @@ const { Left,Right } = require('data.either')
 const fs = require('fs')
 const path = require('path')
 const { fromNullable, Just, Nothing } = require('data.maybe')
+const { injectModule } = require('./codemod')
+const { backupFile } = require('../util')
 
 
 
@@ -49,7 +51,7 @@ module.exports = Generator.extend({
       {
         type: 'input',
         name: 'name',
-        message: 'Please enter app name?',
+        message: 'Please enter module name (must be a valid dir name)?',
         validate: validateModule(this.destinationPath())
       }
     ]
@@ -85,6 +87,13 @@ module.exports = Generator.extend({
       this.destinationPath(`${root}/constants.js`),
       { name:this.props.name }
     )
+
+    const dashboard = this.destinationPath('src/Dashboard.js')
+    const babelRc = this.destinationPath('.babelrc')
+    injectModule(this.props.name,dashboard,babelRc,this.log)
+  },
+  install() {
+    this.spawnCommand('yarn',['lint:fix'])
   },
 
   end () {

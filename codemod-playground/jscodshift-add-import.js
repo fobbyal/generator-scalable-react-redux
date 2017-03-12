@@ -26,16 +26,34 @@ const addContainer = treeModder( ast =>
   .push(b.identifier('def'))
 )
 
+const addImport = treeModder( ast =>  {
+ // onsole.ast)
+    const mockImport = b.importDeclaration(
+      [ 
+        b.importSpecifier(
+          b.identifier('Imported'),
+          b.identifier('Local')
+        ),
+      ] ,
+      b.literal('/remote/pakcage')
+    )
+   ast.find(t.Program)
+   .get('body').unshift(mockImport)
+
+  }
+)
+
 
 const toSoruce = ast =>
   ast.toSource()
 
 read(testFile)
   .map(jscodeshift)
-  .map(addNav)
-  .map(addContainer)
+  // .map(addNav)
+  // .map(addContainer)
+  .map(addImport)
   .map(toSoruce)
   .fork(err => console.log('error: ',err.stack), 
-       // data => console.log('done..')
+        //data => console.log('done..')
         data => console.log('recast output :\n',data) 
   )
