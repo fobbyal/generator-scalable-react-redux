@@ -1,6 +1,7 @@
 # generator-react-redux-spa [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Opiniated React Redux spa scalfolding
 
+#Poject is still in Alpha
 
 ## What is this for?
 This is a geneartor used to create scalable react-redux based apps. The dir structure is based on the [Three Rules For Structuring (Redux) Applications]( https://jaysoo.ca/2016/02/28/organizing-redux-application/) written by Jack Hsu. I've been using this for a few projects and have enjoyed the convention and decided to try to adopt this at work. However, the amount of the boilerplate required gave me second thoughs. And then.... the idea of this project was born.
@@ -14,7 +15,14 @@ This was created to lighten workload on developers at my work as we are trying o
 ## Problems with this generator
 1. Front end only. I work in a environment that does not have javascript as a backend.
 2. Boat load of dependencies you may or may not need. (I trust that able developers can remove them failry quickly)
+3. favors yarn instead of npm
+4. I put my own .eslint config in here
 
+
+## Noted features 
+1. React Hot Loader
+2. React Storybook
+3. Redux dev tools comaptible
 
 ## More docs needed
 
@@ -24,7 +32,7 @@ First, install [Yeoman](http://yeoman.io) and generator-react-redux-spa using [n
 
 ```bash
 npm install -g yo
-npm install -g generator-react-redux-spa@next
+npm install -g generator-react-redux-spa@alpha
 ```
 
 Then generate your new project:
@@ -32,14 +40,15 @@ Then generate your new project:
 ```bash
 yo react-redux-spa
 ```
-generate a new module with in the project
+generate a new module with in the project. This will hook up nav automatically
 ```bash
 yo react-redux-spa:module
 ```
 
-##ToDos
-[] no tests what-so-ever
-[] looking into
+
+## Task List
+- [ ] no tests what-so-ever
+- [ ] looking into adding redux observables
 
 ## Getting To Know Yeoman
 

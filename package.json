@@ -1,7 +1,7 @@
 {
-  "name": "generator-react-redux-spa",
+  "name": "generator-scalable-react-redux",
   "version": "0.0.0-alpha",
-  "description": "Opiniated React Redux spa scalfolding",
+  "description": "Opiniated Scalable React Redux spa scalfolding",
   "homepage": "",
   "author": {
     "name": "Alex Liang",
@@ -60,7 +60,7 @@
       "mocha": true
     }
   },
-  "repository": "fobbyal/generator-react-redux-spa",
+  "repository": "fobbyal/generator-scalable-react-redux",
   "scripts": {
     "lint:fix": "eslint generators test gulpfile.js --fix",
     "lint": "eslint generators test gulpfile.js",
