@@ -19,11 +19,13 @@
     "lint:fix": "eslint src --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cover": "jest --coverage"
+    "test:cover": "jest --coverage",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "author": "<%= author %>",
   "license": "ISC",
   "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",

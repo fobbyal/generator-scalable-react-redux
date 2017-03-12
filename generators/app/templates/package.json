@@ -24,6 +24,7 @@
   "author": "Alex Liang",
   "license": "ISC",
   "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",

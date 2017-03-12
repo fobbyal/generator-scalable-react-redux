@@ -15,6 +15,7 @@
   "keywords": [
     "react",
     "redux",
+    "storybook",
     "scalfolding",
     "yeoman",
     "yeoman-generator"

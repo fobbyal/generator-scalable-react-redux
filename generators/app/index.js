@@ -59,6 +59,14 @@ module.exports = Generator.extend({
       this.destinationPath()
     )
     this.fs.copy(
+      this.templatePath('.storybook/**/*.*'),
+      this.destinationPath('.storybook')
+    )
+    this.fs.copy(
+      this.templatePath('.storybook/.*'),
+      this.destinationPath('.storybook')
+    )
+    this.fs.copy(
       this.templatePath('mock-api/**/*.*'),
       this.destinationPath('mock-api')
     )
