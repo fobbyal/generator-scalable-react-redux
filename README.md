@@ -38,11 +38,15 @@ npm install -g generator-scalable-react-redux@alpha
 Then generate your new project:
 
 ```bash
-yo react-redux-spa
+yo scalable-react-redux
 ```
 generate a new module with in the project. This will hook up nav automatically
 ```bash
-yo react-redux-spa:module
+yo scalable-react-redux:module
+```
+see it in action
+```bash
+yarn start
 ```
 
 
