@@ -48,6 +48,12 @@ see it in action
 ```bash
 yarn start
 ```
+react-storybook
+```bash
+yarn storybook
+```
+* UI url at [http://localhost:3000]
+* react-storybook url at [http://localhost:9001]
 
 
 ## Task List
