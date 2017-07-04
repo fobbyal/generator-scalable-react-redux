@@ -10,7 +10,8 @@ import Redbox from 'redbox-react'
 /* eslint-disable import/no-unresolved */
 require('!!style-loader!css-loader!normalize.css/normalize.css')
 //require('!!style-loader!css-loader!react-virtualized/styles.css')
-require('!!style-loader!css-loader!react-datepicker/dist/react-datepicker.css')
+//require('!!style-loader!css-loader!react-datepicker/dist/react-datepicker.css')
+import '!!style-loader!css-loader!react-dates/lib/css/_datepicker.css'
 //require('!!style-loader!css-loader!semantic-ui-css/semantic.min.css')
 /* eslint-enable import/no-unresolved */
 
