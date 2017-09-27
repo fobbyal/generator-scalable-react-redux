@@ -23,10 +23,8 @@
     "test:cover": "jest --coverage",
     "storybook": "start-storybook -p 6006",
     "analyze": "webpack --env.prod --env.ana -p --profile --json > stats.json",
-    "pretty":
-      "prettier --single-quote --trailing-comma es5 --no-semi --debug-check \"src/**/*.js\"",
-    "pretty:write":
-      "prettier --single-quote --trailing-comma es5 --no-semi --write \"src/**/*.js\"",
+    "pretty": "prettier --single-quote --trailing-comma es5 --no-semi --debug-check \"src/**/*.js\"",
+    "pretty:write": "prettier --single-quote --trailing-comma es5 --no-semi --write \"src/**/*.js\"",
     "precommit": "lint-staged",
     "build-storybook": "build-storybook"
   },
@@ -128,5 +126,4 @@
       "git add"
     ]
   }
-
 }
