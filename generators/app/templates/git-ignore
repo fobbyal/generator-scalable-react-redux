@@ -5,3 +5,4 @@ dist
 npm-debug.log
 coverage
 stats.json
+git-ignore

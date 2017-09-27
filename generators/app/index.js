@@ -50,7 +50,7 @@ module.exports = Generator.extend({
     this.fs.copy(this.templatePath('!(node_modules)'), this.destinationPath())
     this.fs.copy(this.templatePath('.*'), this.destinationPath())
     this.fs.copy(
-      this.templatePath('.gitignore'),
+      this.templatePath('git-ignore'),
       this.destinationPath('.gitignore')
     )
     this.fs.copy(
