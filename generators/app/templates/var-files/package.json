@@ -21,16 +21,21 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 6006",
     "analyze": "webpack --env.prod --env.ana -p --profile --json > stats.json",
-    "pretty": "prettier --single-quote --trailing-comma es5 --no-semi --debug-check \"src/**/*.js\"",
-    "pretty:write": "prettier --single-quote --trailing-comma es5 --no-semi --write \"src/**/*.js\""
+    "pretty":
+      "prettier --single-quote --trailing-comma es5 --no-semi --debug-check \"src/**/*.js\"",
+    "pretty:write":
+      "prettier --single-quote --trailing-comma es5 --no-semi --write \"src/**/*.js\"",
+    "precommit": "lint-staged",
+    "build-storybook": "build-storybook"
   },
   "author": "<%= author %>",
   "license": "ISC",
   "devDependencies": {
-    "@storybook/react": "3.1.7",
+    "@storybook/addon-actions": "^3.2.10",
+    "@storybook/addon-links": "^3.2.10",
+    "@storybook/react": "^3.2.10",
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
@@ -38,9 +43,7 @@
     "babel-loader": "^6.2.5",
     "babel-plugin-module-resolver": "^2.2.0",
     "babel-polyfill": "^6.16.0",
-    "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
     "body-parser": "^1.15.2",
     "chance": "^1.0.8",
     "cors": "^2.8.1",
@@ -51,28 +54,33 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-react": "^6.4.1",
     "express": "^4.14.0",
-    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "extract-text-webpack-plugin": "^3.0.0",
     "fetch-mock": "^5.5.0",
-    "html-webpack-plugin": "^2.22.0",
+    "git-rev-sync": "^1.9.1",
+    "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
+    "jest": "^21.1.0",
     "jest-cli": "^17.0.3",
     "jsonfile": "^2.4.0",
+    "lint-staged": "^4.2.3",
     "npm-run-all": "^3.1.0",
     "postcss-loader": "^0.13.0",
-    "prettier": "^1.5.2",
-    "progress-bar-webpack-plugin": "^1.9.0",
+    "prettier": "^1.7.0",
+    "progress-bar-webpack-plugin": "^1.10.0",
     "react-addons-test-utils": "^15.4.1",
-    "react-hot-loader": "^3.0.0-beta.6",
+    "react-hot-loader": "^3.0.0-beta.7",
     "react-test-renderer": "^15.4.1",
     "redbox-react": "^1.3.3",
     "redux-mock-store": "^1.2.1",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.9",
     "uuid": "^3.0.1",
-    "webpack": "^3.0.0",
-    "webpack-bundle-analyzer": "^2.8.2",
-    "webpack-dashboard": "^0.4.0",
-    "webpack-dev-server": "^2",
+    "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dashboard": "^1.0.0-5",
+    "webpack-dev-server": "^2.8.2",
     "yargs": "^6.5.0"
   },
   "dependencies": {
@@ -86,14 +94,15 @@
     "moment": "^2.18.1",
     "normalize.css": "^5.0.0",
     "numeral": "^2.0.1",
+    "prop-types": "^15.6.0",
     "ramda": "^0.22.1",
-    "react": "^15.3.2",
+    "react": "^15.6.2",
     "react-addons-shallow-compare": "^15.4.1",
     "react-contextmenu": "^2.6.3",
     "react-dates": "^12.1.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.6",
-    "react-router-dom": "^4.0.0",
+    "react-router-dom": "^4.2.2",
     "react-virtualized": "^9.8.0",
     "recompose": "^0.23.1",
     "redux": "^3.6.0",
@@ -112,5 +121,12 @@
     "setupFiles": [
       "./mock-api/mock-api-for-tests.js"
     ]
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --single-quote --trailing-comma es5 --no-semi --write",
+      "git add"
+    ]
   }
+
 }

@@ -18,7 +18,24 @@ import '!!style-loader!css-loader!react-dates/lib/css/_datepicker.css'
 /**need code here to get initial state need to how how get the previous state from java**/
 const rootEl = document.getElementById('root')
 
-const store = configureStore()
+
+/*eslint-disable*/
+console.log('apiMode', apiMode)
+const initialState = {
+  core: {
+    apiTargetInfo: {
+      baseUrl:
+        apiMode === 'prod'
+          ? window.location.protocol + '//' + window.location.host + '/api'//TODO: update with real api base
+          : apiMode === 'mock'
+            ? 'http://localhost:9898/api'
+            : 'http://localhost:9797/api',
+    },
+  },
+}
+console.log(initialState)
+/*eslint-enable*/
+const store = configureStore(initialState)
 
 
 /** this is here because auto reload won't wor if require action */

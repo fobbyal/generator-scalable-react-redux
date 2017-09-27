@@ -13,16 +13,17 @@ Anyone who wants setup a scalable react-redux application.
 This was created to lighten workload on developers at my work as we are trying out the directory structure. It is heavily opiniated. It is not meant to support every possible way of creating a react app.  This is by no means a standard for react apps. There are certainly better ways to do this.
 
 ## Problems with this generator
-1. Front end only. I work in a environment that does not have javascript as a backend.
+1. Front end only. I work in an environment that does not have javascript as a backend.
 2. Boat load of dependencies you may or may not need. (I trust that able developers can remove them failry quickly)
-3. favors yarn instead of npm
+3. yarn by default
 4. I put my own .eslint config in here
 
 
 ## Noted features 
 1. React Hot Loader
 2. React Storybook
-3. Redux dev tools comaptible
+3. Redux dev tools compatible
+4. Jest for tests
 
 ## More docs needed
 
@@ -44,16 +45,24 @@ generate a new module with in the project. This will hook up nav automatically
 ```bash
 yo scalable-react-redux:module
 ```
-see it in action
+### Run app
 ```bash
 yarn start
 ```
-react-storybook
+* visit app at [http://localhost:3000]
+
+### react-storybook
 ```bash
 yarn storybook
 ```
-* UI url at [http://localhost:3000]
-* react-storybook url at [http://localhost:9001]
+* visit react-storybook at [http://localhost:6001]
+
+### Run test
+```bash
+yarn test:watch
+```
+
+
 
 
 ## Task List

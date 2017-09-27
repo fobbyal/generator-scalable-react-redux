@@ -44,7 +44,7 @@ const ExampleView = () => (
       </div>
       <div>
         <a href="https://reacttraining.com/" 
-          tyle={{ marginLeft:'14px' }}
+          style={{ marginLeft:'14px' }}
           className="ui blue button">
             Learn more About Routing »
         </a>

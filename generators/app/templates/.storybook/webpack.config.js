@@ -1,14 +1,18 @@
-/* eslint-env node */
-const { resolve }  =  require('path')
-const autoprefixer = require('autoprefixer')
+// you can use this file to add your custom webpack plugins, loaders and anything you like.
+// This is just the basic way to add additional webpack configurations.
+// For more information refer the docs: https://storybook.js.org/configurations/custom-webpack-config
+
+// IMPORTANT
+// When you add this file, we won't add the default configurations which is similar
+// to "React Create App". This only has babel loader to load JavaScript.
 
 module.exports = {
+  plugins: [
+    // your custom plugins
+  ],
   module: {
-    loaders: [
-      { test: /\.css$/, loader: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader' },
-    ]
+    rules: [
+      // add your custom rules.
+    ],
   },
-  postcss: function() {
-    return [autoprefixer];
-  }
-}
+};

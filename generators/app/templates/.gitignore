@@ -4,3 +4,4 @@ dist
 *.iml
 npm-debug.log
 coverage
+stats.json
