@@ -4,6 +4,7 @@
     "react"
   ],
   "plugins": [
+    "ramda",
     "react-hot-loader/babel",
     "transform-object-rest-spread",
     "transform-async-to-generator",
